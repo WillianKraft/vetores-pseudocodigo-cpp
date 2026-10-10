@@ -1,0 +1,22 @@
+Exercício 2 - Temperaturas de uma máquina
+Objetivo: usar vetor, repetição e decisão com SE, SENÃO SE e SENÃO.
+
+INÍCIO
+   DECLARE temperaturas[6] COMO REAL
+   DECLARE i COMO INTEIRO
+
+   PARA i <- 0 ATÉ 5 FAÇA
+      ESCREVA "Digite a temperatura da medição ", i + 1, " (°C): "
+      LEIA temperaturas[i]
+   FIMPARA
+
+   PARA i <- 0 ATÉ 5 FAÇA
+      SE temperaturas[i] < 40 ENTÃO
+         ESCREVA "Medição ", i + 1, ": Temperatura normal"
+      SENÃO SE temperaturas[i] <= 60 ENTÃO
+         ESCREVA "Medição ", i + 1, ": Atenção"
+      SENÃO
+         ESCREVA "Medição ", i + 1, ": Temperatura crítica"
+      FIMSE
+   FIMPARA
+FIM

@@ -1,0 +1,17 @@
+Exercício 1 - Notas de cinco alunos
+Objetivo: criar, preencher e percorrer um vetor com PARA.
+
+INÍCIO
+   DECLARE notas[5] COMO REAL
+   DECLARE i COMO INTEIRO
+
+   PARA i <- 0 ATÉ 4 FAÇA
+      ESCREVA "Digite a nota do aluno ", i + 1, ": "
+      LEIA notas[i]
+   FIMPARA
+
+   ESCREVA "Notas informadas:"
+   PARA i <- 0 ATÉ 4 FAÇA
+      ESCREVA "Aluno ", i + 1, ": ", notas[i]
+   FIMPARA
+FIM

@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar e executar",
+            "type": "shell",
+            "command": "$ext = '${fileExtname}'; if ($ext -eq '.cpp') { $cc = 'g++' } elseif ($ext -eq '.c') { $cc = 'gcc' } else { Write-Host 'Abra um arquivo .c ou .cpp antes de rodar.' -ForegroundColor Yellow; exit 1 }; Get-Process -Name '${fileBasenameNoExtension}' -ErrorAction SilentlyContinue | Stop-Process -Force; Start-Sleep -Milliseconds 300; Clear-Host; & $cc -Wall '${file}' -o '${fileDirname}\\${fileBasenameNoExtension}.exe'; if ($LASTEXITCODE -eq 0) { & '${fileDirname}\\${fileBasenameNoExtension}.exe' }",
+            "options": {
+                "shell": {
+                    "executable": "powershell.exe",
+                    "args": ["-NoProfile", "-Command"]
+                },
+                "env": {
+                    "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+Exercício 3 - Produção diária de peças
+Objetivo: percorrer um vetor e realizar acumulação e comparação.
+
+INÍCIO
+   DECLARE producao[7] COMO INTEIRO
+   DECLARE i, total, maior COMO INTEIRO
+
+   PARA i <- 0 ATÉ 6 FAÇA
+      ESCREVA "Digite a produção do dia ", i + 1, ": "
+      LEIA producao[i]
+   FIMPARA
+
+   total <- 0
+   maior <- producao[0]
+
+   PARA i <- 0 ATÉ 6 FAÇA
+      total <- total + producao[i]
+
+      SE producao[i] > maior ENTÃO
+         maior <- producao[i]
+      FIMSE
+   FIMPARA
+
+   ESCREVA "Produção total: ", total
+   ESCREVA "Maior produção em um único dia: ", maior
+FIM
